@@ -15,11 +15,13 @@ export class CategoryComponent extends Carousel implements AfterViewInit {
 
 	@Input() cards: Game[] = [];
 
+	@Input() autoPlay: boolean = false;
+
 	constructor() {
 		super();
 	}
 
 	ngAfterViewInit(): void {
-		this.setCarouselComponent(this.carousel);
+		this.setCarouselComponent(this.carousel, this.autoPlay);
 	}
 }

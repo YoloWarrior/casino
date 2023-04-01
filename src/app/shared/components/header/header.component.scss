@@ -1,34 +1,14 @@
 .header {
-	background: rgba(19, 20, 32, 0.4);
+	background: rgba(19, 20, 32, 0.6);
 	backdrop-filter: blur(10px);
-	height: 80px;
+	height: 65px;
 	width: 100%;
-	position: absolute;
+	position: fixed;
+	top: 0;
 	z-index: 2;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	padding-left: 20px;
-
-	&__search-icon {
-		padding: 12px 20px;
-		background: #794dfd;
-		border-radius: 20px;
-	}
-
-	&__filter-icon {
-		margin-left: 20px;
-	}
-
-	&__search {
-		background: rgba(0, 0, 0, 0);
-		border: none;
-		color: white;
-		width: 15%;
-		font-weight: 600;
-		font-size: 16px;
-		margin-left: 20px;
-		&:focus {
-			outline: none;
-		}
-	}
+	padding: 20px 0 0 20px;
+	justify-content: flex-start;
 }

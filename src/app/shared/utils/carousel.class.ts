@@ -12,8 +12,12 @@ export class Carousel {
 
 	constructor() {}
 
-	setCarouselComponent(carouselComponent: CarouselComponent) {
+	setCarouselComponent(carouselComponent: CarouselComponent, autoPlay = false) {
 		this.carousel = carouselComponent;
+		this.carouselConfiguration = {
+			...this.carouselConfiguration,
+			autoplay: autoPlay,
+		};
 	}
 
 	goNextSlide() {

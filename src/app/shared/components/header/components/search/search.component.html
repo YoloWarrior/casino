@@ -1,0 +1,20 @@
+<div class="search">
+	<img
+		class="search__icon"
+		[class.active]="focusState === 'active'"
+		src="assets/icons/search.svg"
+	/>
+	<input
+		[@focusWidth]="focusState"
+		(blur)="focusState = 'inactive'"
+		(focus)="focusState = 'active'"
+		class="search__input"
+		placeholder="Search for games..."
+	/>
+	<img
+		(click)="toggleFiltersModal()"
+		[class.active]="isFiltersModalOpened"
+		class="search__icon search__filter-icon"
+		src="assets/icons/filter.svg"
+	/>
+</div>

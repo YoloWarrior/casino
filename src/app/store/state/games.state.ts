@@ -42,4 +42,15 @@ export class GamesState {
 			});
 		};
 	}
+
+	@Selector()
+	static getByIds(state: GamesStateModel) {
+		return (ids?: string[]) => {
+			return state.games.filter((game) => {
+				return ids?.some((id) => {
+					return game.id?.toLowerCase().includes(id.toLowerCase());
+				});
+			});
+		};
+	}
 }

@@ -12,18 +12,21 @@ import { GamesState } from "./store/state/games.state";
 import { NgxsModule } from "@ngxs/store";
 import { environment } from "src/environments/environment";
 import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
+import { PlayedGamesModule } from "./shared/components/played-games/played-games.module";
+import { SearchState } from "./store/state/search.state";
 
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
 		CommonModule,
+		PlayedGamesModule,
 		HttpClientModule,
 		RouterModule,
 		BrowserModule,
 		AppPagesModule,
 		HeaderModule,
 		LeftMenuModule,
-		NgxsModule.forRoot([GamesState], {
+		NgxsModule.forRoot([GamesState, SearchState], {
 			developmentMode: !environment.production,
 		}),
 		NgxsStoragePluginModule.forRoot(),
