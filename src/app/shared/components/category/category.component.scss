@@ -1,0 +1,19 @@
+.category {
+	&__title {
+		margin-top: 30px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		display: block;
+		color: white;
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	&__list {
+		border-radius: 20px;
+		padding: 25px 0 25px 25px;
+		background: #131420;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+		cursor: grab;
+	}
+}

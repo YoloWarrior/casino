@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+body {
+	background: #1b1c2d;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	overflow-x: hidden;
+}

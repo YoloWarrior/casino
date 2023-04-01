@@ -1,0 +1,10 @@
+<section class="category">
+	<span class="category__title">{{ title }}</span>
+	<div class="category__list" *ngIf="cards.length > 0">
+		<owl-carousel-o [options]="carouselConfiguration" #carousel>
+			<ng-container *ngFor="let item of cards">
+				<ng-template carouselSlide><card [card]="item"></card></ng-template>
+			</ng-container>
+		</owl-carousel-o>
+	</div>
+</section>

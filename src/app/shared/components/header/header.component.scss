@@ -1,0 +1,34 @@
+.header {
+	background: rgba(19, 20, 32, 0.4);
+	backdrop-filter: blur(10px);
+	height: 80px;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+
+	&__search-icon {
+		padding: 12px 20px;
+		background: #794dfd;
+		border-radius: 20px;
+	}
+
+	&__filter-icon {
+		margin-left: 20px;
+	}
+
+	&__search {
+		background: rgba(0, 0, 0, 0);
+		border: none;
+		color: white;
+		width: 15%;
+		font-weight: 600;
+		font-size: 16px;
+		margin-left: 20px;
+		&:focus {
+			outline: none;
+		}
+	}
+}

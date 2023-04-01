@@ -1,0 +1,15 @@
+<div
+	class="menu-item"
+	(mouseenter)="setIsHovered(true)"
+	(mouseleave)="setIsHovered(false)"
+>
+	<div
+		class="menu-item__icon"
+		[class.menu-item--hovered]="config?.isHovered"
+		[inlineSVG]="config?.icon ?? ''"
+	></div>
+
+	<ng-container *ngIf="config?.isHovered">
+		<span [@slideIn] class="menu-item__title">{{ config?.title }}</span>
+	</ng-container>
+</div>

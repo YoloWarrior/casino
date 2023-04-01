@@ -1,0 +1,23 @@
+.promo {
+	width: 100vw;
+	position: relative;
+
+	&__image {
+		z-index: 0;
+		width: 93%;
+	}
+
+	&__text {
+		position: absolute;
+		top: 30%;
+		left: 0;
+		color: white;
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	&__price-text {
+		color: #794dfd;
+		font-size: 46px;
+	}
+}

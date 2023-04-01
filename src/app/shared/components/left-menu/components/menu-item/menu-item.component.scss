@@ -1,0 +1,25 @@
+.menu-item {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&--hovered {
+		cursor: pointer;
+		&::ng-deep svg path {
+			fill: white;
+		}
+	}
+
+	&__title {
+		font-size: 14px;
+		font-weight: 500;
+		padding: 5px 12px;
+		position: absolute;
+		color: white;
+		border-radius: 5px;
+		background-color: #794dfd;
+		left: 90%;
+		z-index: 3;
+	}
+}
