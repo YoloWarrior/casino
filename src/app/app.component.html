@@ -1,7 +1,9 @@
-<div style="display: flex; width: 100%">
+<div style="display: flex">
 	<left-menu></left-menu>
-	<header-menu></header-menu>
-
-	<router-outlet></router-outlet>
-	<played-games></played-games>
+	<div  style="display: flex;flex-direction: column;">
+		<router-outlet></router-outlet>
+		<div style="margin-top: 50px;">
+			<played-games></played-games>
+		</div>
+	</div>
 </div>

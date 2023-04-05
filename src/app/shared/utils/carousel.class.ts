@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { CarouselComponent } from "ngx-owl-carousel-o";
-import { carouselConfig } from "src/app/core/const/carousel-config";
+import { carouselConfig } from "@consts/carousel-config";
 
 @Component({
 	template: "",
@@ -12,19 +12,24 @@ export class Carousel {
 
 	constructor() {}
 
-	setCarouselComponent(carouselComponent: CarouselComponent, autoPlay = false) {
+	setCarouselComponent(
+		carouselComponent: CarouselComponent,
+		autoPlay = false,
+		loop = true
+	) {
 		this.carousel = carouselComponent;
 		this.carouselConfiguration = {
 			...this.carouselConfiguration,
 			autoplay: autoPlay,
+			loop: loop,
 		};
 	}
 
-	goNextSlide() {
+	public goNextSlide() {
 		this.carousel.next();
 	}
 
-	goPreviousSlide() {
-		this.carousel.next();
+	public goPreviousSlide() {
+		this.carousel.prev();
 	}
 }

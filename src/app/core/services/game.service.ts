@@ -1,29 +1,12 @@
 import { Injectable } from "@angular/core";
+import { StorageKeys } from "@enums/storage-keys.enum";
 
 @Injectable({
 	providedIn: "root",
 })
 export class GameService {
-	setPlayedGame(id: string) {
-		const playedGames = this.getPlayedGamesIds();
-
-		if (playedGames.length == 5) {
-			playedGames.shift();
-		}
-
-		playedGames.push(id);
-		localStorage.setItem(
-			"played",
-			JSON.stringify(
-				playedGames.filter(
-					(item, index) => playedGames.lastIndexOf(item) === index
-				)
-			)
-		);
-	}
-
 	getPlayedGamesIds(): string[] {
-		const playedGames = localStorage.getItem("played") || "";
+		const playedGames = localStorage.getItem(StorageKeys.GAMES) || "";
 
 		return playedGames ? (JSON.parse(playedGames) as string[]) : [];
 	}

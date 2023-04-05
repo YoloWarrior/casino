@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Store } from "@ngxs/store";
-import { FetchGames } from "./store/actions/games.actions";
+import { FetchGames } from "@actions/games.actions";
 
 @Component({
 	selector: "app-root",

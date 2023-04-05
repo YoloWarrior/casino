@@ -1,24 +1,31 @@
-import { GameService } from "./../../../core/services/game.service";
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { Store } from "@ngxs/store";
-import { GamesState } from "src/app/store/state/games.state";
-import { map } from "rxjs/operators";
-import { Game } from "src/app/core/models/game.model";
+import { GamesState } from "@states/games.state";
+import { Game } from "@models/game.model";
+import { Subscription } from "rxjs";
 
 @Component({
 	selector: "played-games",
 	templateUrl: "./played-games.component.html",
 	styleUrls: ["./played-games.component.scss"],
 })
-export class PlayedGamesComponent {
+export class PlayedGamesComponent implements OnDestroy {
 	playedGames: Game[] = [];
 
-	constructor(private store: Store, private gameService: GameService) {
-		this.store
-			.select(GamesState.getByIds)
-			.pipe(map((filterFn) => filterFn(this.gameService.getPlayedGamesIds())))
-			.subscribe((games) => {
-				this.playedGames = games;
-			});
+	private subscription = new Subscription();
+
+	constructor(private store: Store) {
+		this.subscription.add(
+			this.store.select(GamesState.getPlayedGames).subscribe((games) => {
+				if (games && games?.length > 0) {
+					const reversedGames = [...games].reverse();
+					this.playedGames = reversedGames || [];
+				}
+			})
+		);
+	}
+
+	ngOnDestroy(): void {
+		this.subscription.unsubscribe();
 	}
 }

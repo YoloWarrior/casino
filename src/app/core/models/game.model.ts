@@ -4,4 +4,6 @@ export interface Game {
 	tag?: string;
 	title?: string;
 	thumb?: any;
+	providerName?: string;
+	[key: string]: string | any;
 }

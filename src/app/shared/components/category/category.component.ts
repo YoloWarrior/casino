@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, Input, ViewChild } from "@angular/core";
 import { CarouselComponent } from "ngx-owl-carousel-o";
-import { Game } from "src/app/core/models/game.model";
+import { Game } from "@models/game.model";
 import { Carousel } from "../../utils/carousel.class";
+import { Router } from "@angular/router";
+import { AppRoutes } from "@enums/routes.enum";
 
 @Component({
 	selector: "category",
@@ -17,11 +19,17 @@ export class CategoryComponent extends Carousel implements AfterViewInit {
 
 	@Input() autoPlay: boolean = false;
 
-	constructor() {
+	@Input() loop: boolean = true;
+
+	constructor(private router: Router) {
 		super();
 	}
 
 	ngAfterViewInit(): void {
-		this.setCarouselComponent(this.carousel, this.autoPlay);
+		this.setCarouselComponent(this.carousel, this.autoPlay, this.loop);
+	}
+
+	onClickGame(game: Game) {
+		this.router.navigate([`${AppRoutes.GAMES}`, game.id]);
 	}
 }

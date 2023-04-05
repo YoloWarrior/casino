@@ -1,0 +1,13 @@
+<section class="games">
+	<div class="games__search-wrapper">
+		<search></search>
+	</div>
+
+	<div class="games__filters-wrapper" *ngIf="isFiltersModalOpened" [@slideIn]>
+		<filter-list></filter-list>
+	</div>
+
+	<div class="games__category-wrapper">
+		<category [cards]="games" [loop]="false"></category>
+	</div>
+</section>

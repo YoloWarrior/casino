@@ -1,0 +1,21 @@
+.games {
+	margin-top: 40px;
+	width: 100vw;
+	height: 100vh;
+
+	&__search-wrapper,
+	&__filters-wrapper,
+	&__category-wrapper {
+		width: 100%;
+	}
+
+	&__filters-wrapper {
+		margin-top: 30px;
+		padding-left: 20px;
+	}
+
+	&__category-wrapper {
+		margin-top: 100px;
+		padding: 0 20px;
+	}
+}

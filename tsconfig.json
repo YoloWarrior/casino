@@ -17,7 +17,18 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "plugins": [{ "name": "typescript-tslint-plugin" }]
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "paths": {
+      "@services/*": ["src/app/core/services/*"],
+      "@enums/*": ["src/app/core/enum/*"],
+      "@consts/*": ["src/app/core/const/*"],
+      "@models/*": ["src/app/core/models/*"],
+      "@animations/*": ["src/app/shared/animations/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
+      "@actions/*": ["src/app/store/actions/*"],
+      "@states/*": ["src/app/store/state/*"]
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

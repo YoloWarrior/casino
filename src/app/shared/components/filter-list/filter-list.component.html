@@ -1,0 +1,10 @@
+<div class="filters">
+	<div
+		class="filters__item"
+		*ngFor="let filter of filters | unique : 'title'"
+		(click)="toggleFilter(filter)"
+		[class.active]="filter?.isActive"
+	>
+		{{ filter?.title }}
+	</div>
+</div>

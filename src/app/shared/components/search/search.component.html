@@ -4,13 +4,18 @@
 		[class.active]="focusState === 'active'"
 		src="assets/icons/search.svg"
 	/>
-	<input
-		[@focusWidth]="focusState"
-		(blur)="focusState = 'inactive'"
-		(focus)="focusState = 'active'"
-		class="search__input"
-		placeholder="Search for games..."
-	/>
+	<div class="search__input-wrapper">
+		<input
+			class="search__input"
+			placeholder="Search for games..."
+			[@focusWidth]="focusState"
+			(focus)="setFocusState('active')"
+			(blur)="setFocusState('inactive')"
+			(input)="onTextChange($event)"
+			[value]="searchText"
+		/>
+	</div>
+
 	<img
 		(click)="toggleFiltersModal()"
 		[class.active]="isFiltersModalOpened"

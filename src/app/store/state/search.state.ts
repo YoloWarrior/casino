@@ -1,24 +1,14 @@
 import { Injectable } from "@angular/core";
 import { Selector, State } from "@ngxs/store";
+import { SetSearchText, ToggleFiltersModal } from "@actions/search.actions";
 import {
-	RemoveActiveFilter,
-	SetActiveFilter,
-	SetSearchText,
-	ToggleFiltersModal,
-	ToggleSearchResultsModal,
-} from "../actions/search.actions";
-import {
-	removeActiveFilter,
-	setActiveFilter,
 	setSearchText,
 	toggleFiltersModal,
-	toggleSearchResultsModal,
-} from "../actions/search.actions.impl";
+} from "@actions/search.actions.impl";
 import { attachAction } from "@ngxs-labs/attach-action";
 
-export class SearchStateModel {
-	text?: string = "";
-	activeFilters?: string[] = [];
+export interface SearchStateModel {
+	text?: string;
 	isFiltersModalOpened?: boolean;
 	isSearchResultsModalOpened?: boolean;
 }
@@ -27,7 +17,6 @@ export class SearchStateModel {
 	name: "search",
 	defaults: {
 		text: "",
-		activeFilters: [],
 		isFiltersModalOpened: false,
 		isSearchResultsModalOpened: false,
 	},
@@ -35,15 +24,8 @@ export class SearchStateModel {
 @Injectable()
 export class SearchState {
 	constructor() {
-		attachAction(SearchState, SetSearchText, setSearchText(""));
-		attachAction(SearchState, SetActiveFilter, setActiveFilter(""));
-		attachAction(SearchState, RemoveActiveFilter, removeActiveFilter(""));
+		attachAction(SearchState, SetSearchText, setSearchText());
 		attachAction(SearchState, ToggleFiltersModal, toggleFiltersModal());
-		attachAction(
-			SearchState,
-			ToggleSearchResultsModal,
-			toggleSearchResultsModal()
-		);
 	}
 
 	@Selector()
@@ -54,10 +36,5 @@ export class SearchState {
 	@Selector()
 	static isFiltersModalOpened(state: SearchStateModel) {
 		return state.isFiltersModalOpened;
-	}
-
-	@Selector()
-	static isSearchResultsModalOpened(state: SearchStateModel) {
-		return state.isSearchResultsModalOpened;
 	}
 }

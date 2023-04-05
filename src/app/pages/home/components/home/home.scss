@@ -1,0 +1,10 @@
+.home {
+	padding: 0 20px;
+	margin: 0 20px;
+	z-index: 1;
+
+	&__tranding-wrapper {
+		position: relative;
+		top: -80px;
+	}
+}

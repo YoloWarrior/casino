@@ -1,7 +1,10 @@
-<div
+<a
 	class="menu-item"
 	(mouseenter)="setIsHovered(true)"
 	(mouseleave)="setIsHovered(false)"
+	[routerLink]="config?.route"
+	[routerLinkActive]="'menu-item--active'"
+	[routerLinkActiveOptions]="{ exact: true }"
 >
 	<div
 		class="menu-item__icon"
@@ -12,4 +15,4 @@
 	<ng-container *ngIf="config?.isHovered">
 		<span [@slideIn] class="menu-item__title">{{ config?.title }}</span>
 	</ng-container>
-</div>
+</a>

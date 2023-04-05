@@ -1,3 +1,4 @@
+import { AppRoutes } from "@enums/routes.enum";
 import { MenuItem } from "./models/MenuItem";
 import { Component } from "@angular/core";
 
@@ -11,11 +12,13 @@ export class LeftMenuComponent {
 		{
 			icon: "assets/icons/home.svg",
 			title: "Home",
+			route: AppRoutes.HOME,
 			isHovered: false,
 		},
 		{
 			icon: "assets/icons/games.svg",
 			title: "Games",
+			route: AppRoutes.GAMES,
 			isHovered: false,
 		},
 	];

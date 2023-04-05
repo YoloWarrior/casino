@@ -4,9 +4,15 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LeftMenuComponent } from "./left-menu.component";
 import { InlineSVGModule } from "ng-inline-svg";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-	imports: [CommonModule, BrowserAnimationsModule, InlineSVGModule.forRoot()],
+	imports: [
+		CommonModule,
+		RouterModule,
+		BrowserAnimationsModule,
+		InlineSVGModule.forRoot(),
+	],
 	declarations: [LeftMenuComponent, MenuItemComponent],
 	exports: [LeftMenuComponent],
 })

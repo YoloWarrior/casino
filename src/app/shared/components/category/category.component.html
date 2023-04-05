@@ -1,9 +1,21 @@
 <section class="category">
 	<span class="category__title" *ngIf="title">{{ title }}</span>
 	<div class="category__list" *ngIf="cards.length > 0">
+		<img
+			class="category__list-arrow"
+			src="assets/icons/arrow-left.svg"
+			(click)="goPreviousSlide()"
+		/>
+		<img
+			class="category__list-arrow"
+			src="assets/icons/arrow-right.svg"
+			(click)="goNextSlide()"
+		/>
 		<owl-carousel-o [options]="carouselConfiguration" #carousel>
 			<ng-container *ngFor="let item of cards">
-				<ng-template carouselSlide><card [card]="item"></card></ng-template>
+				<ng-template carouselSlide
+					><card [card]="item" (cardClick)="onClickGame($event)"></card
+				></ng-template>
 			</ng-container>
 		</owl-carousel-o>
 	</div>

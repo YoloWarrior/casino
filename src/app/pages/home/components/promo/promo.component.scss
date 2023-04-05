@@ -1,3 +1,5 @@
+@import "@app/colors";
+
 .promo {
 	width: 100vw;
 	position: relative;
@@ -11,13 +13,13 @@
 		position: absolute;
 		top: 30%;
 		left: 0;
-		color: white;
+		color: $white;
 		font-size: 32px;
 		font-weight: 600;
 	}
 
 	&__price-text {
-		color: #794dfd;
+		color: $hover;
 		font-size: 46px;
 	}
 }

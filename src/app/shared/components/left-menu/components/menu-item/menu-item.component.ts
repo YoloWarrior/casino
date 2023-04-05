@@ -1,6 +1,6 @@
-import { MenuItem } from "./../../models/MenuItem";
+import { MenuItem } from "../../models/MenuItem";
 import { Component, Input } from "@angular/core";
-import { slideInAnimation } from "src/app/shared/animations/slide-in.animation";
+import { slideInAnimation } from "@animations/slide-in.animation";
 
 @Component({
 	selector: "menu-item",

@@ -2,20 +2,19 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 
 export const carouselConfig: OwlOptions = {
 	loop: true,
-	mouseDrag: true,
+	mouseDrag: false,
 	lazyLoad: false,
-	autoWidth: true,
 	autoplay: true,
 	autoplayHoverPause: true,
 	autoplayTimeout: 3000,
-	dragEndSpeed: 500,
-	fluidSpeed: true,
 	autoplaySpeed: 1000,
+	autoWidth: true,
 	items: 5,
 	pullDrag: false,
 	dots: false,
 	navSpeed: 1400,
 	nav: false,
+	skip_validateItems: true,
 	responsive: {
 		0: {
 			items: 1,

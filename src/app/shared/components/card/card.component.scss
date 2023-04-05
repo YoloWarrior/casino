@@ -9,8 +9,5 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: 2px 0;
-
-	&:hover:not(:active) {
-		//style for  not  grabbed  on hover
-	}
+	cursor: pointer;
 }

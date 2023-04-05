@@ -1,0 +1,5 @@
+<section *ngIf="game?.thumb?.url" class="game">
+	<span class="game__title">{{ game?.title }}</span>
+
+	<iframe class="game__playground" [src]="game?.startUrl | safe"></iframe>
+</section>
